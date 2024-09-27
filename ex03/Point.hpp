@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/27 14:27:04 by codespace         #+#    #+#             */
-/*   Updated: 2024/09/27 15:18:36 by codespace        ###   ########.fr       */
+/*   Created: 2024/09/27 15:33:43 by codespace         #+#    #+#             */
+/*   Updated: 2024/09/27 15:41:40 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int	main(void)
+class	Point
 {
-	Fixed		a;
-	const Fixed	b(Fixed(5.05f) * Fixed(2));
+	private:
+		const Fixed	x;
+		const Fixed	y;
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max(a, b) << std::endl;
-}
+	public:
+		Point(void);
+		Point(const Fixed a, const Fixed b);
+		Point(Point &other);
+		~Point(void);
+		
+		Point	&operator=(const Point &other);
+		Fixed	getX(void) const;
+		Fixed	getY(void) const;
+};
