@@ -10,12 +10,14 @@ class	Fixed
 		int			fixed_point;
 		static const int	fractional_bits = 8;
 	public:
-		Fixed(void);
-		Fixed(const Fixed &other);
-		Fixed&	operator=(const Fixed &other);
-		~Fixed(void);
-		int	getRawBits(void) const;
-		void	setRawBits(const int raw);
+					Fixed(void);
+					~Fixed(void);
+
+					Fixed(const Fixed &other);
+					Fixed&	operator=(const Fixed &other);
+
+		int			getRawBits(void) const;
+		void			setRawBits(const int raw);
 };
 
 
